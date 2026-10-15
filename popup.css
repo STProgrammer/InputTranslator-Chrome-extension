@@ -1,0 +1,112 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  width: 300px;
+  margin: 0;
+  background: Canvas;
+  color: CanvasText;
+}
+
+main {
+  padding: 16px;
+}
+
+.heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.2;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.toggle input {
+  position: absolute;
+  opacity: 0;
+}
+
+.toggle span[aria-hidden] {
+  position: relative;
+  width: 32px;
+  height: 18px;
+  border-radius: 999px;
+  background: #777;
+  transition: background 120ms ease;
+}
+
+.toggle span[aria-hidden]::after {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: white;
+  content: "";
+  transition: transform 120ms ease;
+}
+
+.toggle input:checked + span[aria-hidden] {
+  background: #1a73e8;
+}
+
+.toggle input:checked + span[aria-hidden]::after {
+  transform: translateX(14px);
+}
+
+.toggle input:focus-visible + span[aria-hidden] {
+  outline: 2px solid #1a73e8;
+  outline-offset: 2px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+select {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 34px;
+  padding: 5px 8px;
+  border: 1px solid #8888;
+  border-radius: 6px;
+  background: Canvas;
+  color: CanvasText;
+  font: inherit;
+  font-weight: 400;
+}
+
+.hint {
+  margin: 16px 0 0;
+  color: GrayText;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.status {
+  min-height: 16px;
+  margin: 6px 0 0;
+  color: #188038;
+  font-size: 11px;
+  text-align: right;
+}

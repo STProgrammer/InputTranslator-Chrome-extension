@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Input Translator</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <div class="heading-row">
+        <h1>Input Translator</h1>
+        <label class="toggle">
+          <input id="enabled" type="checkbox">
+          <span aria-hidden="true"></span>
+          <span id="enabled-label">Enabled</span>
+        </label>
+      </div>
+
+      <label class="field" for="target-language">
+        <span>Translate English to</span>
+        <select id="target-language"></select>
+      </label>
+
+      <label class="field" for="provider">
+        <span>Provider</span>
+        <select id="provider">
+          <option value="mymemory">MyMemory (no API key)</option>
+        </select>
+      </label>
+
+      <p class="hint">Press Enter once to translate, then Enter again to submit. Modifier + Enter is never intercepted.</p>
+      <p id="save-status" class="status" role="status" aria-live="polite"></p>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
